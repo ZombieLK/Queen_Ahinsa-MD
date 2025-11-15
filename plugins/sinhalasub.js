@@ -8,10 +8,10 @@ const NodeCache = require('node-cache');
 // Cache
 const searchCache = new NodeCache({ stdTTL: 60, checkperiod: 120 });
 const BRAND = '' + config.MOVIE_FOOTER;
-const API_KEY = 'c56182a993f60b4f49cf97ab09886d17'; // 🗝️ Your SinhalaSub API key
+const API_KEY = '8b351aea3c309f07eaa84ec1db41900acad5bf239e172fcfe04082c2666e86b0'; // 🗝️ Your SinhalaSub API key
 
 // Base API endpoints
-const API_BASE = 'https://sadaslk-apis.vercel.app/api/v1/movie/sinhalasub';
+const API_BASE = 'https://foreign-marna-sithaunarathnapromax-9a005c2e.koyeb.app/api/cinesubz';
 
 cmd({
   pattern: 'sinhalasub',
