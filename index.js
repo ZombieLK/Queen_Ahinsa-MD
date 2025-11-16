@@ -1,4 +1,4 @@
-const {
+Const {
 default: makeWASocket,
 useMultiFileAuthState,
 DisconnectReason,
@@ -87,17 +87,42 @@ require("./plugins/" + plugin);
 console.log('ᴘʟᴜɢɪɴs ɪɴsᴛᴀʟʟᴇᴅ sᴜᴄᴄᴇssғᴜʟʏ 🔌✅')
 console.log('QUEEN_AHINSA-MD ᴄᴏɴɴᴇᴄᴛᴇᴅ ᴛᴏ ᴡʜᴀᴛsᴀᴘᴘ ✅')
 
-let up = `> *➺Queen_Ahinsa-MD ᴄᴏɴɴᴇᴄᴛᴇᴅ sᴜᴄᴄᴇssғᴜʟʏ ᴛʏᴘᴇ .ᴍᴇɴᴜ ᴛᴏ ᴄᴏᴍᴍᴀɴᴅ ʟɪsᴛ ᴄʀᴇᴀᴛᴇᴅ ʙʏ DILISHA Gimshan ✅*
+// ----------------------------------------------------------------------------------
+// ⭐ NEW BUTTON MESSAGE FOR OWNER ⭐
+// ----------------------------------------------------------------------------------
+const bodyText = `> *👋 ඔබට සුබ පැතුම්! Queen_Ahinsa-MD බෝට් එක සාර්ථකව සම්බන්ධ විය! ✅*
+> *විධාන ලැයිස්තුව සඳහා Menu Button එක ඔබන්න.*
 
 ╭⊱✫🔮 QUEEN_AHINSA-MD 🔮✫⊱╮
-│✫➠ - *📂REPOSITORY NAME:* Queen_Ahinsa-MD 
-│✫➠ - *📃DESCRIPTION:* ❁ᴡᴏʀʟᴅ ʙᴇsᴛ ᴡʜᴀᴛsᴀᴘᴘ ʙᴏᴛ❁
 │✫➠ - *🛡️OWNER:* DILISHA Gimshan 
 │✫➠ - *🌐 URL:* https://github.com/Koyeb-LK/Queen_Ahinsa-MD 
 ╰━━━━━━━━━━━━━━━━━╯
 
-*YOUR BOT ACTIVE NOW ENJOY♥️🪄*\n\nPREFIX: ${prefix}`;
-conn.sendMessage(ownerNumber + "@s.whatsapp.net", { image: { url: `https://i.ibb.co/SR76mBh/Pu3-ZYHBS5139.jpg` }, caption: up })
+*ඔබගේ බෝට් එක දැන් ක්‍රියාකාරීයි. විනෝද වන්න!* \n\nPREFIX: ${prefix}`;
+
+// 🔘 Quick Reply Buttons නිර්මාණය කිරීම
+const buttons = [
+    // .menu විධානය
+    { buttonId: prefix + 'menu', buttonText: { displayText: '✨ බෝට් මෙනු (Menu)' }, type: 1 }, 
+    // .owner විධානය
+    { buttonId: prefix + 'owner', buttonText: { displayText: '🧑‍💻 ඕනර් අමතන්න (Owner)' }, type: 1 },
+    // .repo විධානය
+    { buttonId: prefix + 'repo', buttonText: { displayText: '🌐 රිපෝ බලන්න (Repo)' }, type: 1 }
+];
+
+// 🖼️ Image Header සමග Button Message එක නිර්මාණය කිරීම
+const buttonMessage = {
+    image: { url: `https://i.ibb.co/SR76mBh/Pu3-ZYHBS5139.jpg` }, // Header Image URL
+    caption: bodyText, // Body Text
+    footer: '💖 24/7 ස්වයංක්‍රීය සේවාව. Created By DILISHA Gimshan 💖', // Footer Text
+    buttons: buttons,
+    headerType: 4 // HeaderType 4 යනු Image Header එකකි
+};
+
+// 📤 Button Message එක Owner වෙත යැවීම (ownerNumber යනු array එකක් නිසා [0] භාවිතා කරයි)
+conn.sendMessage(ownerNumber[0] + "@s.whatsapp.net", buttonMessage);
+
+// ----------------------------------------------------------------------------------
 
 }
 })
